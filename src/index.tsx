@@ -4,6 +4,8 @@ import App from "App/App";
 import * as serviceWorker from "./serviceWorker";
 //styles
 import "normalize.css";
+import "Assets/Fonts/css/style.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

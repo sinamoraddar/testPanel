@@ -1,0 +1,170 @@
+@import "assets/styles/sass/index.scss";
+.header {
+  background: white;
+  &,
+  .infoContainer {
+    display: flex;
+    widows: 100%;
+  }
+  flex-direction: column;
+  padding: 2em $heavySpacing 0 $heavySpacing;
+  .infoContainer {
+    margin-bottom: $normalSpacing;
+    justify-content: space-between;
+    .infoContainer__rightSide {
+      display: flex;
+      align-items: center;
+      flex: 1 auto;
+      a {
+        background: url("../../../Assets/Images/digikala-logo.svg");
+        @extend %backgroundDefaultStyles;
+        display: inline-block;
+        width: 127.8px;
+        height: 34.2px;
+        margin-left: $normalSpacing;
+      }
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $lightSpacing $normalSpacing;
+        max-width: 450px;
+        width: 70%;
+        height: 25px;
+        opacity: 0.5;
+        border-radius: $normalBorderRadius;
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 6px 40px 0 rgba(0, 0, 0, 0.01);
+        border: solid 1px #ffffff;
+        background-color: $aquaHaze;
+        input {
+          outline: none;
+          height: 100%;
+          border: none;
+          background: transparent;
+          direction: rtl;
+          text-align: right;
+          flex: 1 auto;
+          margin-right: $lightSpacing;
+          font-size: 15px;
+          font-family: 300;
+        }
+        button {
+          all: unset;
+          cursor: pointer;
+          background: url("../../../Assets/Images/search-icon.svg");
+          @extend %backgroundDefaultStyles;
+          min-width: 18px;
+          min-height: 18px;
+        }
+      }
+    }
+    .infoContainer__leftSide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        all: unset;
+        cursor: pointer;
+        @extend %backgroundDefaultStyles;
+
+        width: 22.5px;
+        height: 22.5px;
+      }
+      .user {
+        background: url("../../../Assets/Images/user-icon.svg");
+        padding-left: 2em;
+        border-left: 2px solid $aquaHaze;
+      }
+      .bag {
+        padding-right: 2em;
+        background: url("../../../Assets/Images/shopping-bag.svg");
+      }
+    }
+  }
+  .navigationContainer {
+    height: 55px;
+    &,
+    nav,
+    button,
+    p {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+    nav {
+      &,
+      button {
+        height: 100% !important;
+      }
+      button {
+        all: unset;
+        cursor: pointer;
+        box-shadow: 0 6px 40px 0 rgba(0, 0, 0, 0.02);
+        background-color: #ffffff;
+        padding: 0 $normalSpacing;
+        position: relative;
+        font-size: 14px;
+        &:first-of-type {
+          padding-right: 0;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 2px;
+            background-color: $aquaHaze;
+            height: 50%;
+          }
+          .menuIcon {
+            background: url("../../../Assets/Images/menu-icon.svg");
+            @extend %backgroundDefaultStyles;
+            width: 20px;
+            height: 20px;
+            margin-left: $normalSpacing;
+          }
+        }
+        &:hover {
+          $widthOfAfter: 80%;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: unset;
+            transform: none;
+            height: 2px;
+            width: $widthOfAfter;
+            background-color: $eucalyptus;
+            border-radius: $normalBorderRadius;
+            animation: fillIn linear 0.5s;
+          }
+          @keyframes fillIn {
+            from {
+              width: 0;
+            }
+            to {
+              width: $widthOfAfter;
+            }
+          }
+        }
+      }
+    }
+    p {
+      padding: $normalSpacing $lightSpacing;
+      margin: 0;
+      color: $slateGray;
+      font-size: 13px;
+      span {
+        background: url("../../../Assets/Images/map-pin.svg");
+        @extend %backgroundDefaultStyles;
+        display: inline-block;
+        width: 20.1px;
+        height: 21.3px;
+        margin-right: $lightSpacing;
+      }
+    }
+  }
+}
