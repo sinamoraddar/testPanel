@@ -1,6 +1,7 @@
 @import "assets/styles/sass/index.scss";
 .header {
   background: white;
+  box-shadow: 0 6px 40px 0 rgba(0, 0, 0, 0.02);
   &,
   .infoContainer {
     display: flex;
@@ -126,27 +127,29 @@
             margin-left: $normalSpacing;
           }
         }
-        &:hover {
-          $widthOfAfter: 80%;
-          &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            top: unset;
-            transform: none;
-            height: 2px;
-            width: $widthOfAfter;
-            background-color: $eucalyptus;
-            border-radius: $normalBorderRadius;
-            animation: fillIn linear 0.5s;
-          }
-          @keyframes fillIn {
-            from {
-              width: 0;
-            }
-            to {
+        @media screen and (hover: hover) {
+          &:hover {
+            $widthOfAfter: 80%;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              top: unset;
+              transform: none;
+              height: 2px;
               width: $widthOfAfter;
+              background-color: $eucalyptus;
+              border-radius: $normalBorderRadius;
+              animation: fillIn linear 0.4s;
+            }
+            @keyframes fillIn {
+              from {
+                width: 0;
+              }
+              to {
+                width: $widthOfAfter;
+              }
             }
           }
         }

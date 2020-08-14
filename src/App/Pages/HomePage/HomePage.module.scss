@@ -1,0 +1,7 @@
+@import "assets/styles/sass/index.scss";
+
+.mainSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 6em $heavySpacing;
+}

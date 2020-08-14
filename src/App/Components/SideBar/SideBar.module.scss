@@ -1,0 +1,60 @@
+@import "assets/styles/sass/index.scss";
+
+.sideBar {
+  color: $slateGray;
+  ul {
+    list-style: none;
+    margin: 0 0 3em 0;
+    padding: 0;
+    li {
+      display: flex;
+      justify-items: flex-start;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      position: relative;
+      margin-bottom: $normalSpacing;
+      cursor: pointer;
+      svg {
+        margin-left: $normalSpacing;
+      }
+
+      @media screen and(hover:hover) {
+        &:hover {
+          svg {
+            rect {
+              fill: $blueBerry !important;
+              opacity: 1 !important;
+            }
+            * {
+              stroke: white;
+            }
+          }
+          color: $sharkColor;
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(50%, -50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 4px 7px 0 rgba(68, 214, 149, 0.3);
+            background-color: $eucalyptus;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .invitation {
+    all: unset;
+    cursor: pointer;
+    background: url("../../../Assets/Images/invitation.svg");
+    @extend %backgroundDefaultStyles;
+    background-size: initial !important;
+    width: 260px;
+    height: 167px;
+    box-shadow: 0 5px 20px 0 rgba(68, 214, 149, 0.16);
+  }
+}
