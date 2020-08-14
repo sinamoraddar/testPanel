@@ -3,5 +3,5 @@
 .mainSection {
   display: flex;
   justify-content: space-between;
-  padding: 6em $heavySpacing;
+  padding: 6em $heavySpacing 0 $heavySpacing;
 }

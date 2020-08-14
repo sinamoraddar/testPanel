@@ -1,0 +1,87 @@
+@import "assets/styles/sass/index.scss";
+
+.mainSection {
+  color: $sharkColor;
+  background-color: $aquaHaze;
+  flex: 1 auto;
+  border-radius: 0 45px 0 0;
+  padding: $normalSpacing 2em;
+  p {
+    margin: 0;
+    color: $regentGray;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .upperPart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    > div {
+      background-color: white;
+      position: relative;
+
+      top: -5em;
+    }
+    .rightSide {
+      padding: 0 $lightSpacing;
+      padding-left: 1.5em;
+
+      width: 70%;
+      border-radius: 19px;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 40px 0 rgba(0, 0, 0, 0.02);
+      border: solid 1.5px #ffffff;
+      background-color: #ffffff;
+
+      figure {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        img {
+          margin-left: $normalSpacing;
+          width: 180px;
+          height: 180px;
+        }
+        ul {
+          list-style: none;
+          display: grid;
+          grid-template-columns: auto auto;
+          gap: $normalSpacing;
+
+          h4 {
+            margin-top: 0;
+
+            font-size: 13px;
+            font-weight: normal;
+          }
+          .toggleButton {
+            all: unset;
+            cursor: not-allowed;
+            background: url("../../../Assets/Images/toggle-icon.svg");
+            @extend %backgroundDefaultStyles;
+            width: 43px;
+            height: 20px;
+          }
+        }
+      }
+      .editButton {
+        all: unset;
+        cursor: pointer;
+        @extend %backgroundDefaultStyles;
+        background: url("../../../Assets/Images/edit-icon.svg");
+        background-size: initial !important;
+        background-position: -8px 0px !important;
+        width: 43px;
+        height: 48px;
+        box-shadow: 0 3px 6px 0 rgba(76, 111, 255, 0.16);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
